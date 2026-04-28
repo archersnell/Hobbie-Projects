@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://yahoo.com",
+    "status_code": 200,
+    "request_seconds": 4.7,
+    "title": "Yahoo | Mail, Weather, Search, Politics, News, Finance, Sports & Videos",
+    "heading_count": 8,
+    "link_count": 57
+  },
+  {
+    "url": "https://google.com",
+    "status_code": 200,
+    "request_seconds": 2.9,
+    "title": "Google",
+    "heading_count": 0,
+    "link_count": 10
+  },
+  {
+    "url": "https://wikipedia.com",
+    "status_code": 200,
+    "request_seconds": 3.2,
+    "title": "Wikipedia",
+    "heading_count": 8,
+    "link_count": 374
+  }
+]

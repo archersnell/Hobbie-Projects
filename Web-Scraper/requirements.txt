@@ -1,0 +1,3 @@
+Navigate to the working directory
+To get into virtual enviorment ##.\.venv\Scripts\Activate.ps1
+To leave virtual enviorment ##deactivate

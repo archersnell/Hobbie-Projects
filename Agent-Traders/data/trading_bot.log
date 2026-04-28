@@ -1,0 +1,196 @@
+
+2026-04-28 10:45:53,527 | INFO | Starting trading bot for AAPL
+2026-04-28 10:45:53,528 | INFO | Trading mode: paper
+2026-04-28 10:45:54,191 | INFO | Account status: AccountStatus.ACTIVE
+2026-04-28 10:45:54,191 | INFO | Buying power: $200000.00
+2026-04-28 10:45:56,136 | INFO | Current price: $271.51
+2026-04-28 10:45:56,137 | INFO | 20-day SMA: $255.36
+2026-04-28 10:45:56,137 | INFO | Strategy decision: buy
+2026-04-28 10:45:56,137 | INFO | Strategy reason: Price is above the SMA (271.51 > 255.36).
+2026-04-28 10:45:56,137 | INFO | News context: No live news feed is connected yet for AAPL, so sentiment is neutral.
+2026-04-28 10:45:56,241 | INFO | Order submitted successfully.
+2026-04-28 10:45:56,241 | INFO | Order ID: 444b09c1-fc9f-47ee-af5d-474df9211739
+2026-04-28 10:45:56,241 | INFO | Order side: OrderSide.BUY
+2026-04-28 10:45:56,242 | INFO | Order quantity: 1
+2026-04-28 12:31:55,068 | INFO | Starting research workflow for AAPL
+2026-04-28 12:31:55,782 | INFO | Current price: $269.54
+2026-04-28 12:31:55,782 | INFO | 20-day SMA: $255.36
+2026-04-28 12:31:55,782 | INFO | Price vs SMA: 5.55%
+2026-04-28 12:31:55,782 | INFO | Recent price change: 7.19%
+2026-04-28 12:31:55,783 | INFO | Strategy decision: buy
+2026-04-28 12:31:55,783 | INFO | Strategy reason: Price is above the SMA (269.54 > 255.36).
+2026-04-28 12:31:55,783 | INFO | News context: No live news feed is connected yet for AAPL, so sentiment is neutral.
+2026-04-28 12:31:55,783 | INFO | Research conviction: strong
+2026-04-28 12:31:55,783 | INFO | Research action: research for a possible buy
+2026-04-28 12:31:55,783 | INFO | Research summary: AAPL looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 12:31:55,783 | INFO | Research detail: Current price: $269.54
+2026-04-28 12:31:55,783 | INFO | Research detail: SMA: $255.36
+2026-04-28 12:31:55,784 | INFO | Research detail: Price vs SMA: 5.55%
+2026-04-28 12:31:55,784 | INFO | Research detail: Recent price change: 7.19%
+2026-04-28 12:31:55,784 | INFO | Research detail: News sentiment: neutral
+2026-04-28 12:33:25,436 | INFO | Starting trading workflow for AAPL
+2026-04-28 12:33:25,436 | INFO | Trading mode: paper
+2026-04-28 12:33:25,937 | INFO | Account status: AccountStatus.ACTIVE
+2026-04-28 12:33:25,937 | INFO | Buying power: $199726.59
+2026-04-28 12:33:26,478 | INFO | Current price: $269.52
+2026-04-28 12:33:26,478 | INFO | 20-day SMA: $255.36
+2026-04-28 12:33:26,478 | INFO | Price vs SMA: 5.55%
+2026-04-28 12:33:26,478 | INFO | Recent price change: 7.18%
+2026-04-28 12:33:26,478 | INFO | Strategy decision: buy
+2026-04-28 12:33:26,478 | INFO | Strategy reason: Price is above the SMA (269.52 > 255.36).
+2026-04-28 12:33:26,479 | INFO | News context: No live news feed is connected yet for AAPL, so sentiment is neutral.
+2026-04-28 12:33:26,479 | INFO | Research conviction: strong
+2026-04-28 12:33:26,479 | INFO | Research action: research for a possible buy
+2026-04-28 12:33:26,479 | INFO | Research summary: AAPL looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 12:33:26,479 | INFO | Research detail: Current price: $269.52
+2026-04-28 12:33:26,479 | INFO | Research detail: SMA: $255.36
+2026-04-28 12:33:26,479 | INFO | Research detail: Price vs SMA: 5.55%
+2026-04-28 12:33:26,479 | INFO | Research detail: Recent price change: 7.18%
+2026-04-28 12:33:26,480 | INFO | Research detail: News sentiment: neutral
+2026-04-28 12:33:26,510 | INFO | Order submitted successfully.
+2026-04-28 12:33:26,510 | INFO | Order ID: 9a8ff438-b694-4238-b8cd-08c2c1056c07
+2026-04-28 12:33:26,510 | INFO | Order side: OrderSide.BUY
+2026-04-28 12:33:26,510 | INFO | Order quantity: 1
+2026-04-28 12:46:41,169 | INFO | Starting research workflow for SPY
+2026-04-28 12:46:41,986 | INFO | Current price: $709.73
+2026-04-28 12:46:41,987 | INFO | 20-day SMA: $665.99
+2026-04-28 12:46:41,987 | INFO | Price vs SMA: 6.57%
+2026-04-28 12:46:41,988 | INFO | Recent price change: 8.29%
+2026-04-28 12:46:41,988 | INFO | Strategy decision: buy
+2026-04-28 12:46:41,988 | INFO | Strategy reason: Price is above the SMA (709.73 > 665.99).
+2026-04-28 12:46:41,988 | INFO | News context: No live news feed is connected yet for SPY, so sentiment is neutral.
+2026-04-28 12:46:41,989 | INFO | Research conviction: strong
+2026-04-28 12:46:41,989 | INFO | Research action: research for a possible buy
+2026-04-28 12:46:41,989 | INFO | Research summary: SPY looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 12:46:41,989 | INFO | Research detail: Current price: $709.73
+2026-04-28 12:46:41,989 | INFO | Research detail: SMA: $665.99
+2026-04-28 12:46:41,989 | INFO | Research detail: Price vs SMA: 6.57%
+2026-04-28 12:46:41,990 | INFO | Research detail: Recent price change: 8.29%
+2026-04-28 12:46:41,990 | INFO | Research detail: News sentiment: neutral
+2026-04-28 12:50:47,127 | INFO | Starting research workflow for SPY
+2026-04-28 12:50:47,856 | INFO | Current price: $709.68
+2026-04-28 12:50:47,856 | INFO | 20-day SMA: $665.99
+2026-04-28 12:50:47,856 | INFO | Price vs SMA: 6.56%
+2026-04-28 12:50:47,856 | INFO | Recent price change: 8.29%
+2026-04-28 12:50:47,856 | INFO | Strategy decision: buy
+2026-04-28 12:50:47,856 | INFO | Strategy reason: Price is above the SMA (709.68 > 665.99).
+2026-04-28 12:50:47,856 | INFO | News context: No live news feed is connected yet for SPY, so sentiment is neutral.
+2026-04-28 12:50:47,856 | INFO | Research conviction: strong
+2026-04-28 12:50:47,856 | INFO | Research action: research for a possible buy
+2026-04-28 12:50:47,856 | INFO | Research summary: SPY looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 12:50:47,856 | INFO | Research detail: Current price: $709.68
+2026-04-28 12:50:47,856 | INFO | Research detail: SMA: $665.99
+2026-04-28 12:50:47,856 | INFO | Research detail: Price vs SMA: 6.56%
+2026-04-28 12:50:47,857 | INFO | Research detail: Recent price change: 8.29%
+2026-04-28 12:50:47,857 | INFO | Research detail: News sentiment: neutral
+2026-04-28 12:51:40,787 | INFO | Starting trading workflow for SPY
+2026-04-28 12:51:40,787 | INFO | Trading mode: paper
+2026-04-28 12:51:41,516 | INFO | Account status: AccountStatus.ACTIVE
+2026-04-28 12:51:41,517 | INFO | Buying power: $199457.57
+2026-04-28 12:51:42,225 | INFO | Current price: $709.73
+2026-04-28 12:51:42,225 | INFO | 20-day SMA: $665.99
+2026-04-28 12:51:42,225 | INFO | Price vs SMA: 6.57%
+2026-04-28 12:51:42,225 | INFO | Recent price change: 8.29%
+2026-04-28 12:51:42,225 | INFO | Strategy decision: buy
+2026-04-28 12:51:42,225 | INFO | Strategy reason: Price is above the SMA (709.73 > 665.99).
+2026-04-28 12:51:42,226 | INFO | News context: No live news feed is connected yet for SPY, so sentiment is neutral.
+2026-04-28 12:51:42,226 | INFO | Research conviction: strong
+2026-04-28 12:51:42,226 | INFO | Research action: research for a possible buy
+2026-04-28 12:51:42,226 | INFO | Research summary: SPY looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 12:51:42,226 | INFO | Research detail: Current price: $709.73
+2026-04-28 12:51:42,226 | INFO | Research detail: SMA: $665.99
+2026-04-28 12:51:42,226 | INFO | Research detail: Price vs SMA: 6.57%
+2026-04-28 12:51:42,226 | INFO | Research detail: Recent price change: 8.29%
+2026-04-28 12:51:42,226 | INFO | Research detail: News sentiment: neutral
+2026-04-28 12:51:42,226 | WARNING | Risk warning: max trade value ($500.00) is too small to buy one share of SPY at $709.73.
+2026-04-28 12:52:59,464 | INFO | Starting trading workflow for NOW
+2026-04-28 12:52:59,464 | INFO | Trading mode: paper
+2026-04-28 12:53:00,458 | INFO | Account status: AccountStatus.ACTIVE
+2026-04-28 12:53:00,459 | INFO | Buying power: $199458.06
+2026-04-28 12:53:01,485 | INFO | Current price: $90.16
+2026-04-28 12:53:01,485 | INFO | 20-day SMA: $112.63
+2026-04-28 12:53:01,485 | INFO | Price vs SMA: -19.96%
+2026-04-28 12:53:01,485 | INFO | Recent price change: -18.78%
+2026-04-28 12:53:01,485 | INFO | Strategy decision: hold
+2026-04-28 12:53:01,485 | INFO | Strategy reason: Price is not above the SMA (90.16 <= 112.63).
+2026-04-28 12:53:01,485 | INFO | News context: No live news feed is connected yet for NOW, so sentiment is neutral.
+2026-04-28 12:53:01,485 | INFO | Research conviction: weak
+2026-04-28 12:53:01,485 | INFO | Research action: wait
+2026-04-28 12:53:01,486 | INFO | Research summary: NOW is below or near its SMA, so this setup does not look strong enough yet.
+2026-04-28 12:53:01,486 | INFO | Research detail: Current price: $90.16
+2026-04-28 12:53:01,486 | INFO | Research detail: SMA: $112.63
+2026-04-28 12:53:01,486 | INFO | Research detail: Price vs SMA: -19.96%
+2026-04-28 12:53:01,486 | INFO | Research detail: Recent price change: -18.78%
+2026-04-28 12:53:01,486 | INFO | Research detail: News sentiment: neutral
+2026-04-28 12:53:01,486 | WARNING | No trade placed for NOW: strategy did not return a BUY signal.
+2026-04-28 12:58:58,922 | INFO | Starting leaderboard research workflow
+2026-04-28 12:59:04,467 | INFO | Top performers count: 10
+2026-04-28 13:04:11,854 | INFO | Starting trading workflow for AAPL
+2026-04-28 13:04:11,854 | INFO | Trading mode: paper
+2026-04-28 13:04:12,540 | INFO | Account status: AccountStatus.ACTIVE
+2026-04-28 13:04:12,540 | INFO | Buying power: $199457.90
+2026-04-28 13:04:14,484 | INFO | Current price: $269.99
+2026-04-28 13:04:14,484 | INFO | 20-day SMA: $255.36
+2026-04-28 13:04:14,484 | INFO | Price vs SMA: 5.73%
+2026-04-28 13:04:14,484 | INFO | Recent price change: 7.37%
+2026-04-28 13:04:14,484 | INFO | Strategy decision: buy
+2026-04-28 13:04:14,484 | INFO | Strategy reason: Price is above the SMA (269.99 > 255.36).
+2026-04-28 13:04:14,484 | INFO | News context: No live news feed is connected yet for AAPL, so sentiment is neutral.
+2026-04-28 13:04:14,484 | INFO | Research conviction: strong
+2026-04-28 13:04:14,484 | INFO | Research action: research for a possible buy
+2026-04-28 13:04:14,484 | INFO | Research summary: AAPL looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 13:04:14,484 | INFO | Research detail: Current price: $269.99
+2026-04-28 13:04:14,484 | INFO | Research detail: SMA: $255.36
+2026-04-28 13:04:14,484 | INFO | Research detail: Price vs SMA: 5.73%
+2026-04-28 13:04:14,485 | INFO | Research detail: Recent price change: 7.37%
+2026-04-28 13:04:14,485 | INFO | Research detail: News sentiment: neutral
+2026-04-28 13:04:14,581 | INFO | Order submitted successfully.
+2026-04-28 13:04:14,581 | INFO | Order ID: b47e1ea0-e961-498c-bd6d-535fa0c03f0e
+2026-04-28 13:04:14,581 | INFO | Order side: OrderSide.BUY
+2026-04-28 13:04:14,581 | INFO | Order quantity: 1
+2026-04-28 13:08:19,475 | INFO | Starting trading workflow for AAPL
+2026-04-28 13:08:19,475 | INFO | Trading mode: paper
+2026-04-28 13:08:20,298 | INFO | Account status: AccountStatus.ACTIVE
+2026-04-28 13:08:20,298 | INFO | Buying power: $199187.37
+2026-04-28 13:08:22,174 | INFO | Current price: $269.85
+2026-04-28 13:08:22,174 | INFO | 20-day SMA: $255.36
+2026-04-28 13:08:22,174 | INFO | Price vs SMA: 5.67%
+2026-04-28 13:08:22,174 | INFO | Recent price change: 7.31%
+2026-04-28 13:08:22,175 | INFO | Strategy decision: buy
+2026-04-28 13:08:22,175 | INFO | Strategy reason: Price is above the SMA (269.85 > 255.36).
+2026-04-28 13:08:22,175 | INFO | News context: No live news feed is connected yet for AAPL, so sentiment is neutral.
+2026-04-28 13:08:22,175 | INFO | Research conviction: strong
+2026-04-28 13:08:22,175 | INFO | Research action: research for a possible buy
+2026-04-28 13:08:22,175 | INFO | Research summary: AAPL looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 13:08:22,175 | INFO | Research detail: Current price: $269.85
+2026-04-28 13:08:22,175 | INFO | Research detail: SMA: $255.36
+2026-04-28 13:08:22,175 | INFO | Research detail: Price vs SMA: 5.67%
+2026-04-28 13:08:22,175 | INFO | Research detail: Recent price change: 7.31%
+2026-04-28 13:08:22,175 | INFO | Research detail: News sentiment: neutral
+2026-04-28 13:08:22,465 | INFO | Order submitted successfully.
+2026-04-28 13:08:22,465 | INFO | Order ID: 4fef956a-9d6c-49d0-879d-f667ad99d8c5
+2026-04-28 13:08:22,465 | INFO | Order side: OrderSide.BUY
+2026-04-28 13:08:22,466 | INFO | Order quantity: 1
+2026-04-28 13:08:57,379 | INFO | Starting trading workflow for AAPL
+2026-04-28 13:08:57,379 | INFO | Trading mode: paper
+2026-04-28 13:08:58,117 | INFO | Account status: AccountStatus.ACTIVE
+2026-04-28 13:08:58,118 | INFO | Buying power: $198917.36
+2026-04-28 13:08:59,072 | INFO | Current price: $269.82
+2026-04-28 13:08:59,072 | INFO | 20-day SMA: $255.36
+2026-04-28 13:08:59,072 | INFO | Price vs SMA: 5.66%
+2026-04-28 13:08:59,072 | INFO | Recent price change: 7.30%
+2026-04-28 13:08:59,072 | INFO | Strategy decision: buy
+2026-04-28 13:08:59,072 | INFO | Strategy reason: Price is above the SMA (269.82 > 255.36).
+2026-04-28 13:08:59,072 | INFO | News context: No live news feed is connected yet for AAPL, so sentiment is neutral.
+2026-04-28 13:08:59,072 | INFO | Research conviction: strong
+2026-04-28 13:08:59,072 | INFO | Research action: research for a possible buy
+2026-04-28 13:08:59,072 | INFO | Research summary: AAPL looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 13:08:59,072 | INFO | Research detail: Current price: $269.82
+2026-04-28 13:08:59,072 | INFO | Research detail: SMA: $255.36
+2026-04-28 13:08:59,073 | INFO | Research detail: Price vs SMA: 5.66%
+2026-04-28 13:08:59,073 | INFO | Research detail: Recent price change: 7.30%
+2026-04-28 13:08:59,073 | INFO | Research detail: News sentiment: neutral
+2026-04-28 13:08:59,108 | INFO | Order submitted successfully.
+2026-04-28 13:08:59,108 | INFO | Order ID: 979fcb30-bbe3-4ad6-8e19-14a554836681
+2026-04-28 13:08:59,108 | INFO | Order side: OrderSide.BUY
+2026-04-28 13:08:59,108 | INFO | Order quantity: 1

@@ -1,4 +1,7 @@
-# Day Trading Stock Evaluator Plan
+# Historical Day Trading Stock Evaluator Plan
+
+This document is an older planning note. The active beginner-friendly code now
+lives in `data/market_data.py` and `strategies/simple_momentum.py`.
 
 This project is a planning document and code scaffold for evaluating intraday stock metrics.
 It does not connect to APIs, place trades, or decide what to buy or sell.
@@ -173,10 +176,10 @@ Rows should be sorted from oldest candle to newest candle.
 
 ## Code Scaffold
 
-The code scaffold lives in:
+The original code scaffold lived in:
 
 ```text
-agents/intraday_indicators.py
+indicators/intraday_indicators.py
 ```
 
 Main function:

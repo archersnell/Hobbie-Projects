@@ -80,6 +80,9 @@ class AlpacaClient:
                 return None
             raise
 
+    def get_positions(self) -> list[Any]:
+        return self.trading_client.get_all_positions()
+
     def get_latest_price(self, symbol: str) -> float:
         from alpaca.data.requests import StockLatestTradeRequest
 

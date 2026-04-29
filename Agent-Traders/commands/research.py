@@ -84,7 +84,7 @@ def _print_market_search_summary(market_type: str, assets_found: int, movers: li
         )
 
 
-def _discover_market_movers(
+def discover_market_movers(
     client: AlpacaClient,
     market_type: str,
     limit: int,
@@ -131,7 +131,7 @@ def run_research(
         print_ranked_results("Ranked research results", ranked_results)
         return
 
-    mover_symbols = _discover_market_movers(
+    mover_symbols = discover_market_movers(
         client=client,
         market_type=market_type,
         limit=limit,

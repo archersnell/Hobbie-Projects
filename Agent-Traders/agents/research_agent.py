@@ -55,6 +55,7 @@ class ResearchAgent:
         top_n: int = 10,
         min_price: float = 5.0,
         min_volume: int = 500_000,
+        offset: int = 0,
     ) -> list[dict]:
         ranked = []
 
@@ -86,4 +87,4 @@ class ResearchAgent:
             )
 
         ranked.sort(key=lambda item: item["percent_change"], reverse=True)
-        return ranked[:top_n]
+        return ranked[offset : offset + top_n]

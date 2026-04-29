@@ -1,8 +1,7 @@
-import pandas as pd
-
 from alpaca.data.historical import StockHistoricalDataClient
-from alpaca.data.requests import StockBarsRequest, StockLatestTradeRequest
-from alpaca.data.timeframe import TimeFrame
+
+from agents.strategy_metrics import StrategyMetrics
+from strategies.scoring_strategy import generate_strategy_signal
 
 
 class StrategyAgent:
@@ -13,6 +12,18 @@ class StrategyAgent:
     AI prompts, model predictions, or a more advanced technical strategy.
     """
 
+    def __init__(
+        self,
+        min_risk_reward: float = 1.5,
+        min_volume_for_signal: float = 0.75,
+        min_score_gap: int = 2,
+        avoid_range_trades: bool = True,
+    ):
+        self.min_risk_reward = min_risk_reward
+        self.min_volume_for_signal = min_volume_for_signal
+        self.min_score_gap = min_score_gap
+        self.avoid_range_trades = avoid_range_trades
+
     def evaluate(
         self,
         market_data_client: StockHistoricalDataClient,
@@ -21,50 +32,69 @@ class StrategyAgent:
         data_feed,
         history_start,
     ) -> dict:
-        latest_trade_request = StockLatestTradeRequest(
-            symbol_or_symbols=symbol,
-            feed=data_feed,
+        metrics = StrategyMetrics().collect(
+            market_data_client=market_data_client,
+            symbol=symbol,
+            sma_period=sma_period,
+            data_feed=data_feed,
+            history_start=history_start,
         )
-        latest_trade = market_data_client.get_stock_latest_trade(latest_trade_request)[symbol]
-        current_price = float(latest_trade.price)
 
-        bars_request = StockBarsRequest(
-            symbol_or_symbols=symbol,
-            timeframe=TimeFrame.Day,
-            start=history_start,
-            limit=sma_period,
-            feed=data_feed,
+        signal_result = generate_strategy_signal(
+            metrics,
+            min_volume_for_signal=self.min_volume_for_signal,
+            min_score_gap=self.min_score_gap,
+            avoid_range_trades=self.avoid_range_trades,
         )
-        bars = market_data_client.get_stock_bars(bars_request)
-        symbol_bars = bars.data.get(symbol, [])
+        decision = self._choose_decision(signal_result)
+        reason = self._build_decision_reason(
+            signal_result=signal_result,
+            decision=decision,
+        )
 
-        if len(symbol_bars) < sma_period:
-            raise ValueError(
-                f"Not enough price history to calculate the {sma_period}-day SMA for {symbol}."
+        return metrics | {
+            "decision": decision,
+            "strategy_signal": signal_result["signal"],
+            "reason": reason,
+            "buy_score": signal_result["buy_score"],
+            "sell_score": signal_result["sell_score"],
+            "confidence": signal_result["confidence"],
+            "stop_loss": signal_result["stop_loss"],
+            "take_profit": signal_result["take_profit"],
+            "risk_reward_ratio": signal_result["risk_reward_ratio"],
+        }
+
+    def _build_decision_reason(self, signal_result: dict, decision: str) -> str:
+        explanation = signal_result["explanation"]
+
+        if signal_result["signal"] != "HOLD" and decision == "hold":
+            return (
+                f"{explanation} Trade held because risk/reward is below "
+                f"the required {self.min_risk_reward:.2f}:1."
             )
 
-        closes = [bar.close for bar in symbol_bars]
-        sma = float(pd.Series(closes).tail(sma_period).mean())
-        price_vs_sma_pct = ((current_price - sma) / sma) * 100 if sma else 0.0
+        return explanation
 
-        if len(closes) >= 5:
-            recent_change_pct = ((current_price - closes[-5]) / closes[-5]) * 100
-        else:
-            recent_change_pct = ((current_price - closes[0]) / closes[0]) * 100
+    # Key decision logic.
+    def _choose_decision(self, signal_result: dict) -> str:
+        """
+        Define the strategy decision rule from indicator scores.
 
-        decision = "buy" if current_price > sma else "hold"
-        reason = (
-            f"Price is above the SMA ({current_price:.2f} > {sma:.2f})."
-            if decision == "buy"
-            else f"Price is not above the SMA ({current_price:.2f} <= {sma:.2f})."
-        )
+        The scoring logic lives in strategies/scoring_strategy.py. This method converts that
+        beginner-friendly BUY/SELL/HOLD signal into the lowercase decision
+        format used by the rest of the trading workflow.
+        """
+        if signal_result["signal"] == "HOLD":
+            return "hold"
 
-        return {
-            "symbol": symbol,
-            "current_price": current_price,
-            "sma": sma,
-            "price_vs_sma_pct": price_vs_sma_pct,
-            "recent_change_pct": recent_change_pct,
-            "decision": decision,
-            "reason": reason,
-        }
+        risk_reward_ratio = signal_result["risk_reward_ratio"]
+        if risk_reward_ratio is None or risk_reward_ratio < self.min_risk_reward:
+            return "hold"
+
+        if signal_result["buy_score"] > signal_result["sell_score"]:
+            return "buy"
+
+        if signal_result["sell_score"] > signal_result["buy_score"]:
+            return "sell"
+
+        return "hold"

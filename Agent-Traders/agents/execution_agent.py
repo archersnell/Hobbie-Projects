@@ -10,11 +10,27 @@ class ExecutionAgent:
     trade confirmations, or broker-routing logic.
     """
 
-    def place_buy_order(self, trading_client, symbol: str, quantity: int):
+    def place_market_order(self, trading_client, symbol: str, quantity: int, side: OrderSide):
         order_request = MarketOrderRequest(
             symbol=symbol,
             qty=quantity,
-            side=OrderSide.BUY,
+            side=side,
             time_in_force=TimeInForce.DAY,
         )
         return trading_client.submit_order(order_data=order_request)
+
+    def place_buy_order(self, trading_client, symbol: str, quantity: int):
+        return self.place_market_order(
+            trading_client=trading_client,
+            symbol=symbol,
+            quantity=quantity,
+            side=OrderSide.BUY,
+        )
+
+    def place_sell_order(self, trading_client, symbol: str, quantity: int):
+        return self.place_market_order(
+            trading_client=trading_client,
+            symbol=symbol,
+            quantity=quantity,
+            side=OrderSide.SELL,
+        )

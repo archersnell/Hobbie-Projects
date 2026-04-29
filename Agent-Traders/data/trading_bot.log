@@ -194,3 +194,469 @@
 2026-04-28 13:08:59,108 | INFO | Order ID: 979fcb30-bbe3-4ad6-8e19-14a554836681
 2026-04-28 13:08:59,108 | INFO | Order side: OrderSide.BUY
 2026-04-28 13:08:59,108 | INFO | Order quantity: 1
+2026-04-28 13:42:49,673 | INFO | Starting research workflow for SPY
+2026-04-28 13:42:50,751 | INFO | Current price: $710.79
+2026-04-28 13:42:50,751 | INFO | 20-day SMA: $665.99
+2026-04-28 13:42:50,751 | INFO | Price vs SMA: 6.73%
+2026-04-28 13:42:50,751 | INFO | Recent price change: 8.46%
+2026-04-28 13:42:50,751 | INFO | Strategy decision: buy
+2026-04-28 13:42:50,751 | INFO | Strategy reason: Price is above the SMA (710.79 > 665.99).
+2026-04-28 13:42:50,751 | INFO | News context: No live news feed is connected yet for SPY, so sentiment is neutral.
+2026-04-28 13:42:50,751 | INFO | Research conviction: strong
+2026-04-28 13:42:50,751 | INFO | Research action: research for a possible buy
+2026-04-28 13:42:50,751 | INFO | Research summary: SPY looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 13:42:50,751 | INFO | Research detail: Current price: $710.79
+2026-04-28 13:42:50,751 | INFO | Research detail: SMA: $665.99
+2026-04-28 13:42:50,751 | INFO | Research detail: Price vs SMA: 6.73%
+2026-04-28 13:42:50,751 | INFO | Research detail: Recent price change: 8.46%
+2026-04-28 13:42:50,751 | INFO | Research detail: News sentiment: neutral
+2026-04-28 13:42:57,955 | INFO | Starting leaderboard research workflow
+2026-04-28 13:43:20,618 | INFO | Top performers count: 10
+2026-04-28 14:03:26,710 | INFO | Starting leaderboard research workflow
+2026-04-28 14:03:30,398 | INFO | Top performers count: 10
+2026-04-28 14:03:48,599 | INFO | Starting trading workflow for SPY
+2026-04-28 14:03:48,599 | INFO | Trading mode: paper
+2026-04-28 14:03:48,923 | INFO | Account status: AccountStatus.ACTIVE
+2026-04-28 14:03:48,923 | INFO | Buying power: $200001.52
+2026-04-28 14:03:49,926 | INFO | Current price: $710.94
+2026-04-28 14:03:49,926 | INFO | 20-day SMA: $665.99
+2026-04-28 14:03:49,927 | INFO | Price vs SMA: 6.75%
+2026-04-28 14:03:49,927 | INFO | Recent price change: 8.48%
+2026-04-28 14:03:49,927 | INFO | Strategy decision: buy
+2026-04-28 14:03:49,927 | INFO | Strategy reason: Price is above the SMA (710.94 > 665.99).
+2026-04-28 14:03:49,927 | INFO | News context: No live news feed is connected yet for SPY, so sentiment is neutral.
+2026-04-28 14:03:49,927 | INFO | Research conviction: strong
+2026-04-28 14:03:49,927 | INFO | Research action: research for a possible buy
+2026-04-28 14:03:49,927 | INFO | Research summary: SPY looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:03:49,927 | INFO | Research detail: Current price: $710.94
+2026-04-28 14:03:49,927 | INFO | Research detail: SMA: $665.99
+2026-04-28 14:03:49,927 | INFO | Research detail: Price vs SMA: 6.75%
+2026-04-28 14:03:49,927 | INFO | Research detail: Recent price change: 8.48%
+2026-04-28 14:03:49,927 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:03:49,927 | WARNING | Risk warning: max trade value ($500.00) is too small to buy one share of SPY at $710.94.
+2026-04-28 14:04:33,706 | INFO | Starting trading workflow for AAPL
+2026-04-28 14:04:33,706 | INFO | Trading mode: paper
+2026-04-28 14:04:34,007 | INFO | Account status: AccountStatus.ACTIVE
+2026-04-28 14:04:34,007 | INFO | Buying power: $200001.52
+2026-04-28 14:04:34,740 | INFO | Current price: $270.39
+2026-04-28 14:04:34,740 | INFO | 20-day SMA: $255.36
+2026-04-28 14:04:34,740 | INFO | Price vs SMA: 5.88%
+2026-04-28 14:04:34,740 | INFO | Recent price change: 7.53%
+2026-04-28 14:04:34,740 | INFO | Strategy decision: buy
+2026-04-28 14:04:34,740 | INFO | Strategy reason: Price is above the SMA (270.39 > 255.36).
+2026-04-28 14:04:34,740 | INFO | News context: No live news feed is connected yet for AAPL, so sentiment is neutral.
+2026-04-28 14:04:34,740 | INFO | Research conviction: strong
+2026-04-28 14:04:34,740 | INFO | Research action: research for a possible buy
+2026-04-28 14:04:34,740 | INFO | Research summary: AAPL looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:04:34,740 | INFO | Research detail: Current price: $270.39
+2026-04-28 14:04:34,740 | INFO | Research detail: SMA: $255.36
+2026-04-28 14:04:34,740 | INFO | Research detail: Price vs SMA: 5.88%
+2026-04-28 14:04:34,740 | INFO | Research detail: Recent price change: 7.53%
+2026-04-28 14:04:34,740 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:04:34,782 | INFO | Order submitted successfully.
+2026-04-28 14:04:34,782 | INFO | Order ID: 6327a5bf-1b86-4515-b9ba-823e1f1169a7
+2026-04-28 14:04:34,782 | INFO | Order side: OrderSide.BUY
+2026-04-28 14:04:34,782 | INFO | Order quantity: 1
+2026-04-28 14:22:17,114 | INFO | Starting leaderboard research workflow
+2026-04-28 14:22:36,285 | INFO | Top performers count: 10
+2026-04-28 14:23:07,006 | INFO | Starting research workflow for SPY
+2026-04-28 14:23:09,781 | INFO | Current price: $711.30
+2026-04-28 14:23:09,781 | INFO | 20-day SMA: $665.99
+2026-04-28 14:23:09,781 | INFO | Price vs SMA: 6.80%
+2026-04-28 14:23:09,781 | INFO | Recent price change: 8.53%
+2026-04-28 14:23:09,781 | INFO | Strategy decision: hold
+2026-04-28 14:23:09,781 | INFO | Strategy reason: HOLD because buy and sell scores are too close, relative volume is too low.
+2026-04-28 14:23:09,781 | INFO | News context: No live news feed is connected yet for SPY, so sentiment is neutral.
+2026-04-28 14:23:09,781 | INFO | Research conviction: strong
+2026-04-28 14:23:09,781 | INFO | Research action: research for a possible buy
+2026-04-28 14:23:09,781 | INFO | Research summary: SPY looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:23:09,781 | INFO | Research detail: Current price: $711.30
+2026-04-28 14:23:09,781 | INFO | Research detail: SMA: $665.99
+2026-04-28 14:23:09,781 | INFO | Research detail: Price vs SMA: 6.80%
+2026-04-28 14:23:09,781 | INFO | Research detail: Recent price change: 8.53%
+2026-04-28 14:23:09,781 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:25:35,746 | INFO | Starting research workflow for SPY
+2026-04-28 14:25:37,009 | INFO | Current price: $711.33
+2026-04-28 14:25:37,009 | INFO | 20-day SMA: $665.99
+2026-04-28 14:25:37,009 | INFO | Price vs SMA: 6.81%
+2026-04-28 14:25:37,009 | INFO | Recent price change: 8.54%
+2026-04-28 14:25:37,009 | INFO | Strategy decision: hold
+2026-04-28 14:25:37,009 | INFO | Strategy signal: HOLD
+2026-04-28 14:25:37,009 | INFO | Buy score: 3
+2026-04-28 14:25:37,009 | INFO | Sell score: 3
+2026-04-28 14:25:37,009 | INFO | Confidence: LOW
+2026-04-28 14:25:37,009 | INFO | Risk/reward ratio: None
+2026-04-28 14:25:37,009 | INFO | Strategy reason: HOLD because buy and sell scores are too close, relative volume is too low.
+2026-04-28 14:25:37,009 | INFO | News context: No live news feed is connected yet for SPY, so sentiment is neutral.
+2026-04-28 14:25:37,009 | INFO | Research conviction: strong
+2026-04-28 14:25:37,009 | INFO | Research action: research for a possible buy
+2026-04-28 14:25:37,009 | INFO | Research summary: SPY looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:25:37,009 | INFO | Research detail: Current price: $711.33
+2026-04-28 14:25:37,009 | INFO | Research detail: SMA: $665.99
+2026-04-28 14:25:37,009 | INFO | Research detail: Price vs SMA: 6.81%
+2026-04-28 14:25:37,009 | INFO | Research detail: Recent price change: 8.54%
+2026-04-28 14:25:37,009 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:25:53,435 | INFO | Starting research workflow for SPY
+2026-04-28 14:25:54,062 | INFO | Current price: $711.38
+2026-04-28 14:25:54,062 | INFO | 20-day SMA: $665.99
+2026-04-28 14:25:54,062 | INFO | Price vs SMA: 6.82%
+2026-04-28 14:25:54,062 | INFO | Recent price change: 8.55%
+2026-04-28 14:25:54,063 | INFO | Strategy decision: hold
+2026-04-28 14:25:54,063 | INFO | Strategy signal: HOLD
+2026-04-28 14:25:54,063 | INFO | Buy score: 3
+2026-04-28 14:25:54,063 | INFO | Sell score: 3
+2026-04-28 14:25:54,063 | INFO | Confidence: LOW
+2026-04-28 14:25:54,063 | INFO | Risk/reward ratio: None
+2026-04-28 14:25:54,063 | INFO | Strategy reason: HOLD because buy and sell scores are too close, relative volume is too low.
+2026-04-28 14:25:54,063 | INFO | News context: No live news feed is connected yet for SPY, so sentiment is neutral.
+2026-04-28 14:25:54,063 | INFO | Research conviction: strong
+2026-04-28 14:25:54,063 | INFO | Research action: research for a possible buy
+2026-04-28 14:25:54,063 | INFO | Research summary: SPY looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:25:54,063 | INFO | Research detail: Current price: $711.38
+2026-04-28 14:25:54,063 | INFO | Research detail: SMA: $665.99
+2026-04-28 14:25:54,063 | INFO | Research detail: Price vs SMA: 6.82%
+2026-04-28 14:25:54,063 | INFO | Research detail: Recent price change: 8.55%
+2026-04-28 14:25:54,063 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:26:22,641 | INFO | Starting research workflow for AAPL
+2026-04-28 14:26:23,441 | INFO | Current price: $270.61
+2026-04-28 14:26:23,441 | INFO | 20-day SMA: $255.36
+2026-04-28 14:26:23,441 | INFO | Price vs SMA: 5.97%
+2026-04-28 14:26:23,441 | INFO | Recent price change: 7.62%
+2026-04-28 14:26:23,441 | INFO | Strategy decision: hold
+2026-04-28 14:26:23,441 | INFO | Strategy signal: HOLD
+2026-04-28 14:26:23,441 | INFO | Buy score: 3
+2026-04-28 14:26:23,441 | INFO | Sell score: 4
+2026-04-28 14:26:23,441 | INFO | Confidence: LOW
+2026-04-28 14:26:23,441 | INFO | Risk/reward ratio: None
+2026-04-28 14:26:23,441 | INFO | Strategy reason: HOLD because buy and sell scores are too close.
+2026-04-28 14:26:23,441 | INFO | News context: No live news feed is connected yet for AAPL, so sentiment is neutral.
+2026-04-28 14:26:23,441 | INFO | Research conviction: strong
+2026-04-28 14:26:23,441 | INFO | Research action: research for a possible buy
+2026-04-28 14:26:23,441 | INFO | Research summary: AAPL looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:26:23,441 | INFO | Research detail: Current price: $270.61
+2026-04-28 14:26:23,441 | INFO | Research detail: SMA: $255.36
+2026-04-28 14:26:23,441 | INFO | Research detail: Price vs SMA: 5.97%
+2026-04-28 14:26:23,441 | INFO | Research detail: Recent price change: 7.62%
+2026-04-28 14:26:23,441 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:27:01,183 | INFO | Starting research workflow for NOW
+2026-04-28 14:27:01,546 | INFO | Current price: $90.56
+2026-04-28 14:27:01,546 | INFO | 20-day SMA: $112.63
+2026-04-28 14:27:01,546 | INFO | Price vs SMA: -19.59%
+2026-04-28 14:27:01,546 | INFO | Recent price change: -18.41%
+2026-04-28 14:27:01,546 | INFO | Strategy decision: hold
+2026-04-28 14:27:01,546 | INFO | Strategy signal: HOLD
+2026-04-28 14:27:01,546 | INFO | Buy score: 1
+2026-04-28 14:27:01,546 | INFO | Sell score: 5
+2026-04-28 14:27:01,546 | INFO | Confidence: LOW
+2026-04-28 14:27:01,546 | INFO | Risk/reward ratio: None
+2026-04-28 14:27:01,546 | INFO | Strategy reason: HOLD because relative volume is too low, RSI is extremely oversold.
+2026-04-28 14:27:01,546 | INFO | News context: No live news feed is connected yet for NOW, so sentiment is neutral.
+2026-04-28 14:27:01,546 | INFO | Research conviction: weak
+2026-04-28 14:27:01,546 | INFO | Research action: wait
+2026-04-28 14:27:01,546 | INFO | Research summary: NOW is below or near its SMA, so this setup does not look strong enough yet.
+2026-04-28 14:27:01,546 | INFO | Research detail: Current price: $90.56
+2026-04-28 14:27:01,546 | INFO | Research detail: SMA: $112.63
+2026-04-28 14:27:01,546 | INFO | Research detail: Price vs SMA: -19.59%
+2026-04-28 14:27:01,546 | INFO | Research detail: Recent price change: -18.41%
+2026-04-28 14:27:01,546 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:27:18,428 | INFO | Starting leaderboard research workflow
+2026-04-28 14:27:32,769 | INFO | Top performers count: 10
+2026-04-28 14:27:43,004 | INFO | Starting research workflow for CNC
+2026-04-28 14:27:43,970 | INFO | Current price: $49.70
+2026-04-28 14:27:43,971 | INFO | 20-day SMA: $37.24
+2026-04-28 14:27:43,971 | INFO | Price vs SMA: 33.46%
+2026-04-28 14:27:43,971 | INFO | Recent price change: 51.54%
+2026-04-28 14:27:43,971 | INFO | Strategy decision: hold
+2026-04-28 14:27:43,971 | INFO | Strategy signal: HOLD
+2026-04-28 14:27:43,971 | INFO | Buy score: 3
+2026-04-28 14:27:43,971 | INFO | Sell score: 3
+2026-04-28 14:27:43,971 | INFO | Confidence: LOW
+2026-04-28 14:27:43,971 | INFO | Risk/reward ratio: None
+2026-04-28 14:27:43,971 | INFO | Strategy reason: HOLD because buy and sell scores are too close, RSI is extremely oversold.
+2026-04-28 14:27:43,971 | INFO | News context: No live news feed is connected yet for CNC, so sentiment is neutral.
+2026-04-28 14:27:43,971 | INFO | Research conviction: strong
+2026-04-28 14:27:43,971 | INFO | Research action: research for a possible buy
+2026-04-28 14:27:43,971 | INFO | Research summary: CNC looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:27:43,971 | INFO | Research detail: Current price: $49.70
+2026-04-28 14:27:43,971 | INFO | Research detail: SMA: $37.24
+2026-04-28 14:27:43,971 | INFO | Research detail: Price vs SMA: 33.46%
+2026-04-28 14:27:43,971 | INFO | Research detail: Recent price change: 51.54%
+2026-04-28 14:27:43,971 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:28:06,535 | INFO | Starting research workflow for BOOR
+2026-04-28 14:28:17,285 | INFO | Starting research workflow for BORR
+2026-04-28 14:28:17,837 | INFO | Current price: $6.08
+2026-04-28 14:28:17,838 | INFO | 20-day SMA: $5.40
+2026-04-28 14:28:17,838 | INFO | Price vs SMA: 12.71%
+2026-04-28 14:28:17,838 | INFO | Recent price change: 20.97%
+2026-04-28 14:28:17,838 | INFO | Strategy decision: hold
+2026-04-28 14:28:17,838 | INFO | Strategy signal: HOLD
+2026-04-28 14:28:17,838 | INFO | Buy score: 5
+2026-04-28 14:28:17,838 | INFO | Sell score: 3
+2026-04-28 14:28:17,838 | INFO | Confidence: LOW
+2026-04-28 14:28:17,838 | INFO | Risk/reward ratio: None
+2026-04-28 14:28:17,838 | INFO | Strategy reason: HOLD because relative volume is too low.
+2026-04-28 14:28:17,838 | INFO | News context: No live news feed is connected yet for BORR, so sentiment is neutral.
+2026-04-28 14:28:17,838 | INFO | Research conviction: strong
+2026-04-28 14:28:17,838 | INFO | Research action: research for a possible buy
+2026-04-28 14:28:17,838 | INFO | Research summary: BORR looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:28:17,838 | INFO | Research detail: Current price: $6.08
+2026-04-28 14:28:17,838 | INFO | Research detail: SMA: $5.40
+2026-04-28 14:28:17,838 | INFO | Research detail: Price vs SMA: 12.71%
+2026-04-28 14:28:17,838 | INFO | Research detail: Recent price change: 20.97%
+2026-04-28 14:28:17,838 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:31:34,165 | INFO | Starting research workflow for BORR
+2026-04-28 14:31:34,987 | INFO | Current price: $6.09
+2026-04-28 14:31:34,987 | INFO | 20-day SMA: $5.40
+2026-04-28 14:31:34,987 | INFO | Price vs SMA: 12.80%
+2026-04-28 14:31:34,987 | INFO | Recent price change: 21.07%
+2026-04-28 14:31:34,987 | INFO | Strategy decision: hold
+2026-04-28 14:31:34,987 | INFO | Strategy signal: HOLD
+2026-04-28 14:31:34,987 | INFO | Buy score: 5
+2026-04-28 14:31:34,987 | INFO | Sell score: 3
+2026-04-28 14:31:34,987 | INFO | Confidence: LOW
+2026-04-28 14:31:34,987 | INFO | Risk/reward ratio: None
+2026-04-28 14:31:34,987 | INFO | Strategy reason: HOLD because relative volume is too low.
+2026-04-28 14:31:34,987 | INFO | News context: No live news feed is connected yet for BORR, so sentiment is neutral.
+2026-04-28 14:31:34,987 | INFO | Research conviction: strong
+2026-04-28 14:31:34,987 | INFO | Research action: research for a possible buy
+2026-04-28 14:31:34,987 | INFO | Research summary: BORR looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:31:34,987 | INFO | Research detail: Current price: $6.09
+2026-04-28 14:31:34,987 | INFO | Research detail: SMA: $5.40
+2026-04-28 14:31:34,987 | INFO | Research detail: Price vs SMA: 12.80%
+2026-04-28 14:31:34,987 | INFO | Research detail: Recent price change: 21.07%
+2026-04-28 14:31:34,987 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:33:39,157 | INFO | Starting research workflow for BOOR
+2026-04-28 14:33:43,908 | INFO | Starting research workflow for BORR
+2026-04-28 14:33:44,729 | INFO | Current price: $6.09
+2026-04-28 14:33:44,729 | INFO | 20-day SMA: $5.40
+2026-04-28 14:33:44,729 | INFO | Price vs SMA: 12.80%
+2026-04-28 14:33:44,729 | INFO | Recent price change: 21.07%
+2026-04-28 14:33:44,729 | INFO | Strategy decision: hold
+2026-04-28 14:33:44,729 | INFO | Strategy signal: HOLD
+2026-04-28 14:33:44,729 | INFO | Buy score: 5
+2026-04-28 14:33:44,729 | INFO | Sell score: 3
+2026-04-28 14:33:44,729 | INFO | Confidence: LOW
+2026-04-28 14:33:44,729 | INFO | Risk/reward ratio: None
+2026-04-28 14:33:44,729 | INFO | Strategy reason: HOLD because relative volume is too low.
+2026-04-28 14:33:44,729 | INFO | News context: No live news feed is connected yet for BORR, so sentiment is neutral.
+2026-04-28 14:33:44,729 | INFO | Research conviction: strong
+2026-04-28 14:33:44,729 | INFO | Research action: research for a possible buy
+2026-04-28 14:33:44,729 | INFO | Research summary: BORR looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:33:44,729 | INFO | Research detail: Current price: $6.09
+2026-04-28 14:33:44,729 | INFO | Research detail: SMA: $5.40
+2026-04-28 14:33:44,729 | INFO | Research detail: Price vs SMA: 12.80%
+2026-04-28 14:33:44,729 | INFO | Research detail: Recent price change: 21.07%
+2026-04-28 14:33:44,729 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:34:00,130 | INFO | Starting research workflow for CNC
+2026-04-28 14:34:01,694 | INFO | Current price: $49.69
+2026-04-28 14:34:01,694 | INFO | 20-day SMA: $37.24
+2026-04-28 14:34:01,694 | INFO | Price vs SMA: 33.42%
+2026-04-28 14:34:01,694 | INFO | Recent price change: 51.49%
+2026-04-28 14:34:01,694 | INFO | Strategy decision: hold
+2026-04-28 14:34:01,694 | INFO | Strategy signal: HOLD
+2026-04-28 14:34:01,694 | INFO | Buy score: 3
+2026-04-28 14:34:01,694 | INFO | Sell score: 3
+2026-04-28 14:34:01,694 | INFO | Confidence: LOW
+2026-04-28 14:34:01,694 | INFO | Risk/reward ratio: None
+2026-04-28 14:34:01,694 | INFO | Strategy reason: HOLD because buy and sell scores are too close, RSI is extremely oversold.
+2026-04-28 14:34:01,694 | INFO | News context: No live news feed is connected yet for CNC, so sentiment is neutral.
+2026-04-28 14:34:01,694 | INFO | Research conviction: strong
+2026-04-28 14:34:01,694 | INFO | Research action: research for a possible buy
+2026-04-28 14:34:01,694 | INFO | Research summary: CNC looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:34:01,694 | INFO | Research detail: Current price: $49.69
+2026-04-28 14:34:01,694 | INFO | Research detail: SMA: $37.24
+2026-04-28 14:34:01,694 | INFO | Research detail: Price vs SMA: 33.42%
+2026-04-28 14:34:01,694 | INFO | Research detail: Recent price change: 51.49%
+2026-04-28 14:34:01,694 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:34:08,303 | INFO | Starting research workflow for NOW
+2026-04-28 14:34:08,957 | INFO | Current price: $90.57
+2026-04-28 14:34:08,957 | INFO | 20-day SMA: $112.63
+2026-04-28 14:34:08,957 | INFO | Price vs SMA: -19.59%
+2026-04-28 14:34:08,957 | INFO | Recent price change: -18.41%
+2026-04-28 14:34:08,957 | INFO | Strategy decision: hold
+2026-04-28 14:34:08,957 | INFO | Strategy signal: HOLD
+2026-04-28 14:34:08,957 | INFO | Buy score: 1
+2026-04-28 14:34:08,957 | INFO | Sell score: 5
+2026-04-28 14:34:08,957 | INFO | Confidence: LOW
+2026-04-28 14:34:08,957 | INFO | Risk/reward ratio: None
+2026-04-28 14:34:08,957 | INFO | Strategy reason: HOLD because relative volume is too low, RSI is extremely oversold.
+2026-04-28 14:34:08,957 | INFO | News context: No live news feed is connected yet for NOW, so sentiment is neutral.
+2026-04-28 14:34:08,957 | INFO | Research conviction: weak
+2026-04-28 14:34:08,957 | INFO | Research action: wait
+2026-04-28 14:34:08,957 | INFO | Research summary: NOW is below or near its SMA, so this setup does not look strong enough yet.
+2026-04-28 14:34:08,957 | INFO | Research detail: Current price: $90.57
+2026-04-28 14:34:08,958 | INFO | Research detail: SMA: $112.63
+2026-04-28 14:34:08,958 | INFO | Research detail: Price vs SMA: -19.59%
+2026-04-28 14:34:08,958 | INFO | Research detail: Recent price change: -18.41%
+2026-04-28 14:34:08,958 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:34:18,346 | INFO | Starting research workflow for AAPL
+2026-04-28 14:34:19,672 | INFO | Current price: $270.41
+2026-04-28 14:34:19,672 | INFO | 20-day SMA: $255.36
+2026-04-28 14:34:19,672 | INFO | Price vs SMA: 5.89%
+2026-04-28 14:34:19,672 | INFO | Recent price change: 7.54%
+2026-04-28 14:34:19,672 | INFO | Strategy decision: hold
+2026-04-28 14:34:19,672 | INFO | Strategy signal: HOLD
+2026-04-28 14:34:19,672 | INFO | Buy score: 3
+2026-04-28 14:34:19,672 | INFO | Sell score: 4
+2026-04-28 14:34:19,672 | INFO | Confidence: LOW
+2026-04-28 14:34:19,672 | INFO | Risk/reward ratio: None
+2026-04-28 14:34:19,672 | INFO | Strategy reason: HOLD because buy and sell scores are too close.
+2026-04-28 14:34:19,672 | INFO | News context: No live news feed is connected yet for AAPL, so sentiment is neutral.
+2026-04-28 14:34:19,672 | INFO | Research conviction: strong
+2026-04-28 14:34:19,672 | INFO | Research action: research for a possible buy
+2026-04-28 14:34:19,672 | INFO | Research summary: AAPL looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:34:19,672 | INFO | Research detail: Current price: $270.41
+2026-04-28 14:34:19,672 | INFO | Research detail: SMA: $255.36
+2026-04-28 14:34:19,672 | INFO | Research detail: Price vs SMA: 5.89%
+2026-04-28 14:34:19,672 | INFO | Research detail: Recent price change: 7.54%
+2026-04-28 14:34:19,672 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:38:12,010 | INFO | Starting research workflow for BORR
+2026-04-28 14:38:13,759 | INFO | Current price: $6.05
+2026-04-28 14:38:13,759 | INFO | 20-day SMA: $5.40
+2026-04-28 14:38:13,759 | INFO | Price vs SMA: 12.15%
+2026-04-28 14:38:13,759 | INFO | Recent price change: 20.38%
+2026-04-28 14:38:13,759 | INFO | Strategy decision: hold
+2026-04-28 14:38:13,759 | INFO | Strategy signal: BUY
+2026-04-28 14:38:13,759 | INFO | Buy score: 5
+2026-04-28 14:38:13,759 | INFO | Sell score: 3
+2026-04-28 14:38:13,759 | INFO | Confidence: MEDIUM
+2026-04-28 14:38:13,759 | INFO | Risk/reward ratio: 0.13102165696802467
+2026-04-28 14:38:13,759 | INFO | Strategy reason: BUY because price is above VWAP, RSI is in a healthy bullish range, MACD is above the signal line, price is safely above support, price is not too close to resistance, relative volume is acceptable but not strong. Trade held because risk/reward is below the required 1.5:1.
+2026-04-28 14:38:13,759 | INFO | News context: No live news feed is connected yet for BORR, so sentiment is neutral.
+2026-04-28 14:38:13,759 | INFO | Research conviction: strong
+2026-04-28 14:38:13,759 | INFO | Research action: research for a possible buy
+2026-04-28 14:38:13,759 | INFO | Research summary: BORR looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:38:13,759 | INFO | Research detail: Current price: $6.05
+2026-04-28 14:38:13,759 | INFO | Research detail: SMA: $5.40
+2026-04-28 14:38:13,759 | INFO | Research detail: Price vs SMA: 12.15%
+2026-04-28 14:38:13,759 | INFO | Research detail: Recent price change: 20.38%
+2026-04-28 14:38:13,761 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:38:21,698 | INFO | Starting research workflow for AAPL
+2026-04-28 14:38:22,379 | INFO | Current price: $270.33
+2026-04-28 14:38:22,379 | INFO | 20-day SMA: $255.36
+2026-04-28 14:38:22,379 | INFO | Price vs SMA: 5.86%
+2026-04-28 14:38:22,379 | INFO | Recent price change: 7.50%
+2026-04-28 14:38:22,379 | INFO | Strategy decision: hold
+2026-04-28 14:38:22,379 | INFO | Strategy signal: HOLD
+2026-04-28 14:38:22,379 | INFO | Buy score: 3
+2026-04-28 14:38:22,379 | INFO | Sell score: 4
+2026-04-28 14:38:22,379 | INFO | Confidence: LOW
+2026-04-28 14:38:22,379 | INFO | Risk/reward ratio: None
+2026-04-28 14:38:22,379 | INFO | Strategy reason: HOLD because buy and sell scores are too close.
+2026-04-28 14:38:22,379 | INFO | News context: No live news feed is connected yet for AAPL, so sentiment is neutral.
+2026-04-28 14:38:22,379 | INFO | Research conviction: strong
+2026-04-28 14:38:22,379 | INFO | Research action: research for a possible buy
+2026-04-28 14:38:22,379 | INFO | Research summary: AAPL looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:38:22,379 | INFO | Research detail: Current price: $270.33
+2026-04-28 14:38:22,379 | INFO | Research detail: SMA: $255.36
+2026-04-28 14:38:22,379 | INFO | Research detail: Price vs SMA: 5.86%
+2026-04-28 14:38:22,379 | INFO | Research detail: Recent price change: 7.50%
+2026-04-28 14:38:22,379 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:38:31,016 | INFO | Starting research workflow for NOW
+2026-04-28 14:38:32,060 | INFO | Current price: $90.68
+2026-04-28 14:38:32,060 | INFO | 20-day SMA: $112.63
+2026-04-28 14:38:32,060 | INFO | Price vs SMA: -19.49%
+2026-04-28 14:38:32,060 | INFO | Recent price change: -18.31%
+2026-04-28 14:38:32,060 | INFO | Strategy decision: hold
+2026-04-28 14:38:32,060 | INFO | Strategy signal: HOLD
+2026-04-28 14:38:32,060 | INFO | Buy score: 1
+2026-04-28 14:38:32,060 | INFO | Sell score: 5
+2026-04-28 14:38:32,060 | INFO | Confidence: LOW
+2026-04-28 14:38:32,060 | INFO | Risk/reward ratio: None
+2026-04-28 14:38:32,060 | INFO | Strategy reason: HOLD because RSI is extremely oversold for a sell.
+2026-04-28 14:38:32,060 | INFO | News context: No live news feed is connected yet for NOW, so sentiment is neutral.
+2026-04-28 14:38:32,060 | INFO | Research conviction: weak
+2026-04-28 14:38:32,060 | INFO | Research action: wait
+2026-04-28 14:38:32,060 | INFO | Research summary: NOW is below or near its SMA, so this setup does not look strong enough yet.
+2026-04-28 14:38:32,060 | INFO | Research detail: Current price: $90.68
+2026-04-28 14:38:32,060 | INFO | Research detail: SMA: $112.63
+2026-04-28 14:38:32,060 | INFO | Research detail: Price vs SMA: -19.49%
+2026-04-28 14:38:32,060 | INFO | Research detail: Recent price change: -18.31%
+2026-04-28 14:38:32,060 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:38:39,940 | INFO | Starting research workflow for CNC
+2026-04-28 14:38:41,223 | INFO | Current price: $49.59
+2026-04-28 14:38:41,223 | INFO | 20-day SMA: $37.24
+2026-04-28 14:38:41,223 | INFO | Price vs SMA: 33.15%
+2026-04-28 14:38:41,223 | INFO | Recent price change: 51.19%
+2026-04-28 14:38:41,223 | INFO | Strategy decision: hold
+2026-04-28 14:38:41,223 | INFO | Strategy signal: HOLD
+2026-04-28 14:38:41,223 | INFO | Buy score: 3
+2026-04-28 14:38:41,224 | INFO | Sell score: 3
+2026-04-28 14:38:41,224 | INFO | Confidence: LOW
+2026-04-28 14:38:41,224 | INFO | Risk/reward ratio: None
+2026-04-28 14:38:41,224 | INFO | Strategy reason: HOLD because buy and sell scores are too close.
+2026-04-28 14:38:41,224 | INFO | News context: No live news feed is connected yet for CNC, so sentiment is neutral.
+2026-04-28 14:38:41,224 | INFO | Research conviction: strong
+2026-04-28 14:38:41,224 | INFO | Research action: research for a possible buy
+2026-04-28 14:38:41,224 | INFO | Research summary: CNC looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:38:41,224 | INFO | Research detail: Current price: $49.59
+2026-04-28 14:38:41,224 | INFO | Research detail: SMA: $37.24
+2026-04-28 14:38:41,224 | INFO | Research detail: Price vs SMA: 33.15%
+2026-04-28 14:38:41,224 | INFO | Research detail: Recent price change: 51.19%
+2026-04-28 14:38:41,224 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:38:55,372 | INFO | Starting trading workflow for SPY
+2026-04-28 14:38:55,372 | INFO | Trading mode: paper
+2026-04-28 14:38:55,700 | INFO | Account status: AccountStatus.ACTIVE
+2026-04-28 14:38:55,700 | INFO | Buying power: $200001.82
+2026-04-28 14:38:56,015 | INFO | Current price: $711.07
+2026-04-28 14:38:56,015 | INFO | 20-day SMA: $665.99
+2026-04-28 14:38:56,015 | INFO | Price vs SMA: 6.77%
+2026-04-28 14:38:56,015 | INFO | Recent price change: 8.50%
+2026-04-28 14:38:56,015 | INFO | Strategy decision: hold
+2026-04-28 14:38:56,015 | INFO | Strategy signal: HOLD
+2026-04-28 14:38:56,015 | INFO | Buy score: 3
+2026-04-28 14:38:56,015 | INFO | Sell score: 3
+2026-04-28 14:38:56,015 | INFO | Confidence: LOW
+2026-04-28 14:38:56,015 | INFO | Risk/reward ratio: None
+2026-04-28 14:38:56,015 | INFO | Strategy reason: HOLD because buy and sell scores are too close.
+2026-04-28 14:38:56,015 | INFO | News context: No live news feed is connected yet for SPY, so sentiment is neutral.
+2026-04-28 14:38:56,015 | INFO | Research conviction: strong
+2026-04-28 14:38:56,015 | INFO | Research action: research for a possible buy
+2026-04-28 14:38:56,015 | INFO | Research summary: SPY looks constructive: price is above its SMA and short-term momentum is positive.
+2026-04-28 14:38:56,015 | INFO | Research detail: Current price: $711.07
+2026-04-28 14:38:56,015 | INFO | Research detail: SMA: $665.99
+2026-04-28 14:38:56,015 | INFO | Research detail: Price vs SMA: 6.77%
+2026-04-28 14:38:56,015 | INFO | Research detail: Recent price change: 8.50%
+2026-04-28 14:38:56,015 | INFO | Research detail: News sentiment: neutral
+2026-04-28 14:38:56,030 | WARNING | No trade placed for SPY: strategy did not return a BUY signal.
+2026-04-28 14:45:27,346 | INFO | Starting automated scan workflow
+2026-04-28 14:49:56,155 | INFO | Starting automated scan workflow
+2026-04-28 14:51:01,753 | INFO | Starting automated scan workflow
+2026-04-28 14:54:08,736 | INFO | Starting automated scan workflow
+2026-04-28 14:54:44,923 | INFO | Starting automated scan workflow
+2026-04-28 14:55:53,121 | INFO | Starting automated scan workflow
+2026-04-28 14:59:25,623 | INFO | Starting automated scan workflow
+2026-04-28 14:59:40,136 | INFO | Starting automated scan workflow
+2026-04-28 15:00:24,767 | INFO | Starting automated scan workflow
+2026-04-28 15:01:19,021 | INFO | Starting automated scan workflow
+2026-04-28 15:05:04,880 | INFO | Starting automated scan workflow
+2026-04-28 15:05:37,014 | INFO | Starting automated scan workflow
+2026-04-28 15:06:16,203 | INFO | Starting automated scan workflow
+2026-04-28 15:06:47,878 | INFO | Starting automated scan workflow
+2026-04-28 15:07:26,912 | INFO | Starting automated scan workflow
+2026-04-28 15:07:58,422 | INFO | Starting automated scan workflow
+2026-04-28 15:08:30,127 | INFO | Starting automated scan workflow
+2026-04-28 15:09:09,428 | INFO | Starting automated scan workflow
+2026-04-28 15:09:47,285 | INFO | Starting automated scan workflow
+2026-04-28 15:10:19,176 | INFO | Starting automated scan workflow
+2026-04-28 15:10:44,697 | INFO | Starting automated scan workflow
+2026-04-28 15:11:26,386 | INFO | Starting automated scan workflow
+2026-04-28 15:12:08,781 | INFO | Starting automated scan workflow
+2026-04-28 15:12:41,652 | INFO | Starting automated scan workflow
+2026-04-28 15:13:00,331 | INFO | Starting automated scan workflow
+2026-04-28 15:13:36,291 | INFO | Starting automated scan workflow
+2026-04-28 15:14:12,520 | INFO | Starting automated scan workflow
+2026-04-28 17:01:32,559 | INFO | Starting automated scan workflow
+2026-04-28 17:02:04,701 | INFO | Starting automated scan workflow
+2026-04-28 17:02:37,033 | INFO | Starting automated scan workflow
+2026-04-28 17:03:08,788 | INFO | Starting automated scan workflow
+2026-04-28 17:03:40,432 | INFO | Starting automated scan workflow
+2026-04-28 17:04:12,021 | INFO | Starting automated scan workflow
+2026-04-28 17:04:43,941 | INFO | Starting automated scan workflow
+2026-04-28 17:05:36,512 | INFO | Starting automated scan workflow
+2026-04-28 17:06:11,914 | INFO | Starting automated scan workflow
+2026-04-28 17:06:47,200 | INFO | Starting automated scan workflow
+2026-04-28 17:07:10,804 | INFO | Starting automated scan workflow
+2026-04-28 17:07:42,515 | INFO | Starting automated scan workflow
+2026-04-28 17:08:14,158 | INFO | Starting automated scan workflow
+2026-04-28 17:08:46,033 | INFO | Starting automated scan workflow

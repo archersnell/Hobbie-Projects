@@ -1,72 +1,45 @@
-import logging
 import os
 from dataclasses import dataclass
 
 from dotenv import load_dotenv
 
-from alpaca.data.enums import DataFeed
-
 
 @dataclass
-class BotConfig:
-    api_key: str
-    secret_key: str
-    paper: bool
-    symbol: str
+class AppConfig:
+    alpaca_api_key: str
+    alpaca_secret_key: str
+    trading_mode: str
+    data_feed: str
     max_trade_value: float
-    sma_period: int
-    data_feed: DataFeed
-    log_file: str
+    max_symbol_quantity: int
+    max_trades_per_day: int
+    loss_tolerance_pct: float
+    min_buy_score: int
+    bot_interval_seconds: int
+
+    @property
+    def is_live_trading(self) -> bool:
+        return self.trading_mode == "live"
 
 
-def setup_logging(log_file: str) -> None:
-    """Write detailed logs to a file while keeping terminal output concise."""
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s | %(levelname)s | %(message)s",
-        handlers=[logging.FileHandler(log_file, encoding="utf-8")],
-    )
-
-
-def parse_bool(value: str, default: bool = True) -> bool:
-    if value is None:
-        return default
-    return value.strip().lower() in {"1", "true", "yes", "y", "on"}
-
-
-def parse_data_feed(value: str) -> DataFeed:
-    feed_name = (value or "iex").strip().lower()
-    if feed_name == "iex":
-        return DataFeed.IEX
-    if feed_name == "sip":
-        return DataFeed.SIP
-    raise ValueError("ALPACA_DATA_FEED must be either 'iex' or 'sip'.")
-
-
-def load_config(
-    symbol_override: str | None = None,
-    allow_env_symbol: bool = True,
-) -> BotConfig:
+def load_config() -> AppConfig:
     load_dotenv()
 
-    api_key = os.getenv("ALPACA_API_KEY", "").strip()
-    secret_key = os.getenv("ALPACA_SECRET_KEY", "").strip()
+    trading_mode = os.getenv("ALPACA_TRADING_MODE", "paper").strip().lower()
+    if trading_mode not in {"paper", "live"}:
+        raise ValueError("ALPACA_TRADING_MODE must be either 'paper' or 'live'.")
 
-    if not api_key or not secret_key:
-        raise ValueError(
-            "Missing Alpaca API keys. Add ALPACA_API_KEY and ALPACA_SECRET_KEY to your .env file."
-        )
-
-    env_symbol = os.getenv("ALPACA_SYMBOL", "") if allow_env_symbol else ""
-    symbol = symbol_override or env_symbol
-
-    return BotConfig(
-        api_key=api_key,
-        secret_key=secret_key,
-        paper=parse_bool(os.getenv("ALPACA_PAPER"), default=True),
-        symbol=symbol.strip().upper(),
-        max_trade_value=float(os.getenv("MAX_TRADE_VALUE", "500")),
-        sma_period=int(os.getenv("SMA_PERIOD", "20")),
-        data_feed=parse_data_feed(os.getenv("ALPACA_DATA_FEED", "iex")),
-        log_file=os.path.join("data", "trading_bot.log"),
+    return AppConfig(
+        alpaca_api_key=os.getenv("ALPACA_API_KEY", "").strip(),
+        alpaca_secret_key=os.getenv("ALPACA_SECRET_KEY", "").strip(),
+        trading_mode=trading_mode,
+        data_feed=os.getenv("ALPACA_DATA_FEED", "iex").strip().lower(),
+        max_trade_value=float(os.getenv("MAX_TRADE_VALUE", "100")),
+        max_symbol_quantity=int(
+            os.getenv("MAX_SYMBOL_QUANTITY", os.getenv("MAX_OPEN_POSITIONS", "3"))
+        ),
+        max_trades_per_day=int(os.getenv("MAX_TRADES_PER_DAY", "5")),
+        loss_tolerance_pct=float(os.getenv("LOSS_TOLERANCE_PCT", "5")),
+        min_buy_score=int(os.getenv("MIN_BUY_SCORE", "6")),
+        bot_interval_seconds=int(os.getenv("BOT_INTERVAL_SECONDS", "300")),
     )

@@ -79,6 +79,16 @@ python main.py
 
 Stop manual mode with `Ctrl+C`.
 
+## Notification Schedule
+
+- Breaking news: every 15 minutes from 8:00 AM to 6:00 PM ET on market days.
+- Earnings reminders: 8:00 AM ET on report days.
+- Earnings results: checked hourly on market days.
+- Insider trades: every 60 minutes on market days.
+- Legislation/funding updates: 7:30 AM ET daily.
+- Weekly outlook: Monday at 8:00 AM ET.
+- Weekly summary: Friday at 4:00 PM ET.
+
 ## Local HTTP UI
 
 Start the UI:
@@ -100,6 +110,10 @@ The UI currently supports:
 - Add/remove stocks
 - Check masked API key status
 - Send a test notification
+
+## More Docs
+
+- [24/7 hardware options](HARDWARE.md)
 
 ## Install Background Startup Task
 

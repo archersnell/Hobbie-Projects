@@ -7,7 +7,7 @@
 ```
 You are continuing development on a project called stock-tracker.
 
-Read CODEX.md in the project root before doing anything else. It contains the full project context, coding conventions, file structure, what has been built, and what still needs building.
+Read docs/CODEX.md before doing anything else. It contains the full project context, coding conventions, file structure, what has been built, and what still needs building.
 
 Rules you must follow throughout this project:
 - Before writing any code, explain in 3-5 plain English sentences what you are about to build and why.
@@ -24,7 +24,7 @@ Rules you must follow throughout this project:
 
 The developer is on Windows, uses a venv at venv\ in the project root, and is comfortable with APIs and environment variables. This app runs as a background process and sends push notifications to an iPhone via Pushover.
 
-Start by reading CODEX.md, then ask what to build next or proceed with the first unchecked item in the "What Still Needs Building" section.
+Start by reading docs/CODEX.md, then ask what to build next or proceed with the first unchecked item in the "What Still Needs Building" section.
 ```
 
 ---
@@ -60,7 +60,7 @@ A background Python application that monitors a watchlist of stocks and sends pu
 
 | Type | Source | Timing |
 |---|---|---|
-| Breaking news / disaster | Finnhub news feed + keyword scoring | Immediate, high-priority |
+| Breaking news / disaster | Finnhub news feed + keyword scoring | Every 15 min from 08:00-18:00 ET on market days |
 | Earnings report due | Finnhub earnings calendar | Morning of report day (08:00 ET) |
 | Earnings summary | Finnhub + OpenAI API | Hourly check, sent when epsActual is populated |
 | Insider trades (exec buys/sells) | Finnhub insider transactions | Every 60 min on market days |
@@ -91,6 +91,10 @@ stock-tracker/
 ├── venv\                     # Virtual environment (never edit or commit)
 ├── data\
 │   └── seen_items.json       # Restart-safe deduplication log (auto-created)
+├── docs\
+│   ├── README.md             # Windows setup, CLI commands, and UI instructions
+│   ├── CODEX.md              # Full project context for future development
+│   └── HARDWARE.md           # 24/7 hardware hosting options
 ├── config.json               # Watchlist, API keys, alert settings — single source of truth
 ├── config.py                 # Loads/saves config.json, exposes helper functions
 ├── notifier.py               # Pushover wrapper — ALL notifications go through here
@@ -108,8 +112,7 @@ stock-tracker/
 │   └── time_utils.py         # Timezone helpers: now_local, is_weekend, is_market_day
 ├── setup_task_scheduler.ps1  # Installs Windows Task Scheduler login task
 ├── requirements.txt
-├── .gitignore                # Excludes venv, state, secrets, and cache files
-└── CODEX.md                  # This file
+└── .gitignore                # Excludes venv, state, secrets, and cache files
 ```
 
 ---
@@ -144,6 +147,8 @@ stock-tracker/
   },
   "alert_settings": {
     "breaking_news_check_interval_minutes": 15,
+    "breaking_news_start": "08:00",
+    "breaking_news_end": "18:00",
     "insider_trade_check_interval_minutes": 60,
     "weekly_outlook_day": "Monday",
     "weekly_outlook_time": "08:00",
@@ -262,7 +267,9 @@ If unset, weekly digests and earnings summaries will be skipped gracefully with 
 - [x] `main.py` — master scheduler with safe error isolation, startup check on launch
 - [x] `setup_task_scheduler.ps1` — installs a Windows login scheduled task for `main.py`
 - [x] `.gitignore` — excludes `venv\`, `data\`, `config.json`, caches, and env files
-- [x] `CODEX.md`
+- [x] `docs/README.md`
+- [x] `docs/CODEX.md`
+- [x] `docs/HARDWARE.md`
 
 ## What Still Needs Building
 
@@ -274,7 +281,8 @@ If unset, weekly digests and earnings summaries will be skipped gracefully with 
 
 ## Important Constraints
 
-- Never send weekend notifications except for urgent breaking news (enforced in `news.py` and source modules via `is_market_day()`)
+- Breaking news checks run every 15 minutes only from 08:00-18:00 ET on market days
+- Never send weekend notifications except if a future urgent-only job is added
 - All notification sends go through `notifier.py` — no module calls Pushover directly
 - `mark_item_seen` is only called after a successful send (gated on bool return)
 - The app must survive crashes and restarts without resending old alerts

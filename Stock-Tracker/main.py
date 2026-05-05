@@ -13,6 +13,7 @@ from sources.insider import check_insider_trades
 from sources.legislation import check_legislation_updates
 from sources.news import check_breaking_news
 from sources.summarizer import generate_weekly_digest
+from sources.time_utils import is_market_day, is_within_time_window
 
 
 # Runs a scheduled job and prevents one failure from stopping the app.
@@ -38,6 +39,23 @@ def send_weekly_summary() -> None:
         send_digest_alert("Weekly stock summary", digest)
 
 
+# Runs the breaking-news check only during the configured weekday alert window.
+def check_breaking_news_during_alert_window() -> None:
+    settings = get_alert_settings()
+    start_time = settings.get("breaking_news_start", "08:00")
+    end_time = settings.get("breaking_news_end", "18:00")
+
+    if not is_market_day():
+        print("[main] Skipping breaking news outside market days.")
+        return
+
+    if not is_within_time_window(start_time, end_time):
+        print(f"[main] Skipping breaking news outside {start_time}-{end_time}.")
+        return
+
+    check_breaking_news()
+
+
 # Registers all recurring jobs with the schedule library.
 def setup_schedule() -> None:
     settings = get_alert_settings()
@@ -45,7 +63,7 @@ def setup_schedule() -> None:
     schedule.every(settings["breaking_news_check_interval_minutes"]).minutes.do(
         run_safely,
         "breaking news",
-        check_breaking_news,
+        check_breaking_news_during_alert_window,
     )
     schedule.every(settings["insider_trade_check_interval_minutes"]).minutes.do(
         run_safely,
@@ -81,8 +99,6 @@ def setup_schedule() -> None:
 def main() -> None:
     setup_schedule()
     print("[main] Stock tracker scheduler started.")
-
-    run_safely("startup breaking news check", check_breaking_news)
 
     while True:
         schedule.run_pending()

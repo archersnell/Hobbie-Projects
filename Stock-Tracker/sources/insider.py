@@ -14,6 +14,14 @@ from sources.time_utils import is_market_day
 
 MIN_TRADE_VALUE = 100_000
 
+TRANSACTION_ACTIONS = {
+    "P": "Buy",
+    "S": "Sell",
+    "A": "Award/grant",
+    "D": "Disposition",
+    "M": "Option exercise",
+}
+
 
 # Builds a Finnhub client using the configured API key.
 def get_client() -> finnhub.Client:
@@ -51,6 +59,43 @@ def get_transaction_id(ticker: str, item: dict) -> str:
     return f"insider:{ticker}:{filing_id or fallback}"
 
 
+# Describes an insider transaction code in plain English.
+def get_transaction_action(code: str) -> str:
+    clean_code = str(code or "").upper()
+    return TRANSACTION_ACTIONS.get(clean_code, f"Trade {clean_code or 'unknown'}")
+
+
+# Formats a share count for compact display.
+def format_shares(shares) -> str:
+    try:
+        return f"{abs(float(shares)):,.0f}"
+    except (TypeError, ValueError):
+        return "unknown"
+
+
+# Builds a categorized insider-trade alert.
+def format_insider_alert(ticker: str, item: dict, value: float) -> tuple[str, str]:
+    name = item.get("name", "Unknown insider")
+    code = item.get("transactionCode", "")
+    action = get_transaction_action(code)
+    shares = format_shares(item.get("share"))
+    date_text = item.get("transactionDate", "unknown date")
+    try:
+        price_text = f"${float(item.get('transactionPrice')):,.2f}"
+    except (TypeError, ValueError):
+        price_text = "not listed"
+
+    title = f"Insider {action.lower()}: {ticker}"
+    message = "\n".join([
+        "Category: Insider trade",
+        f"Insider: {name}",
+        f"Action: {action}",
+        f"Size: {shares} shares at {price_text}",
+        f"Value/date: ${value:,.0f} on {date_text}",
+    ])
+    return title, message
+
+
 # Checks watched tickers for large insider buys or sells.
 def check_insider_trades() -> None:
     if not is_market_day():
@@ -68,12 +113,7 @@ def check_insider_trades() -> None:
             if has_seen_item(item_id):
                 continue
 
-            name = item.get("name", "Unknown insider")
-            shares = item.get("share", "unknown")
-            date_text = item.get("transactionDate", "unknown date")
-            code = item.get("transactionCode", "trade")
-            title = f"{ticker}: insider {code}"
-            message = f"{name} reported {shares} shares on {date_text}.\nApprox value: ${value:,.0f}"
+            title, message = format_insider_alert(ticker, item, value)
 
             if send_normal_alert(title, message):
                 mark_item_seen(item_id)

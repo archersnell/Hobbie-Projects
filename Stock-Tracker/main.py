@@ -83,7 +83,6 @@ def main() -> None:
     print("[main] Stock tracker scheduler started.")
 
     run_safely("startup breaking news check", check_breaking_news)
-    run_safely("startup legislation check", check_legislation_updates)
 
     while True:
         schedule.run_pending()

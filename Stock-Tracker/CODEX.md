@@ -62,10 +62,10 @@ A background Python application that monitors a watchlist of stocks and sends pu
 |---|---|---|
 | Breaking news / disaster | Finnhub news feed + keyword scoring | Immediate, high-priority |
 | Earnings report due | Finnhub earnings calendar | Morning of report day (08:00 ET) |
-| Earnings summary | Finnhub + Claude API | Hourly check, sent when epsActual is populated |
+| Earnings summary | Finnhub + OpenAI API | Hourly check, sent when epsActual is populated |
 | Insider trades (exec buys/sells) | Finnhub insider transactions | Every 60 min on market days |
-| Weekly outlook | Claude API summary | Monday 08:00 ET |
-| Weekly summary | Claude API summary | Friday 16:00 ET |
+| Weekly outlook | OpenAI API summary | Monday 08:00 ET |
+| Weekly summary | OpenAI API summary | Friday 16:00 ET |
 
 ---
 
@@ -77,7 +77,7 @@ A background Python application that monitors a watchlist of stocks and sends pu
 | Virtual env | `venv` (located at `venv\` in project root) |
 | Push notifications | Pushover API |
 | Stock/financial data | Finnhub API (`finnhub-python` SDK) |
-| AI summaries | Anthropic Claude API (`anthropic` SDK) |
+| AI summaries | OpenAI API (`openai` SDK) |
 | Scheduling | `schedule` library |
 | Timezone | `zoneinfo` + `tzdata` for Windows IANA timezone data |
 | Background runner | Windows Task Scheduler (to be configured) |
@@ -95,6 +95,7 @@ stock-tracker/
 ├── config.py                 # Loads/saves config.json, exposes helper functions
 ├── notifier.py               # Pushover wrapper — ALL notifications go through here
 ├── manage.py                 # CLI tool: add/remove stocks, set API keys, test notifications
+├── web_ui.py                 # Local HTTP UI for watchlist/status/test notifications
 ├── main.py                   # Scheduler — wires all sources together and runs the loop
 ├── sources\
 │   ├── __init__.py
@@ -102,7 +103,7 @@ stock-tracker/
 │   ├── earnings.py           # Earnings calendar reminders + result summaries
 │   ├── insider.py            # SEC insider trade alerts (>$100k threshold)
 │   ├── legislation.py        # Federal Register + Grants.gov quantum policy/funding alerts
-│   ├── summarizer.py         # Claude API — earnings summaries + weekly digests
+│   ├── summarizer.py         # OpenAI API — earnings summaries + weekly digests
 │   ├── state.py              # Seen-items log: load, save, prune, check, mark
 │   └── time_utils.py         # Timezone helpers: now_local, is_weekend, is_market_day
 ├── setup_task_scheduler.ps1  # Installs Windows Task Scheduler login task
@@ -195,7 +196,7 @@ stock-tracker/
 - `is_market_day()` → bool
 
 ### sources/summarizer.py
-- `get_anthropic_client()` → `Anthropic` client or `None` if `ANTHROPIC_API_KEY` unset
+- `get_openai_client()` → `OpenAI` client or `None` if `OPENAI_API_KEY` unset
 - `generate_summary(prompt, max_tokens)` → string or None
 - `summarize_earnings(ticker, earnings_data)` → string or None
 - `generate_weekly_digest(kind)` → string or None (kind = "weekly outlook" or "weekly summary")
@@ -209,6 +210,7 @@ python manage.py set-key pushover_user YOUR_KEY
 python manage.py set-key pushover_token YOUR_TOKEN
 python manage.py set-key finnhub YOUR_KEY
 python manage.py test-notification
+python web_ui.py
 ```
 
 ---
@@ -217,9 +219,9 @@ python manage.py test-notification
 
 | Variable | Required | Used by |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | Yes (for AI summaries) | `sources/summarizer.py` |
+| `OPENAI_API_KEY` | Yes (for AI summaries) | `sources/summarizer.py` |
 
-Set permanently via Windows: Start → "Edit environment variables" → New → `ANTHROPIC_API_KEY`
+Set permanently via Windows: Start → "Edit environment variables" → New → `OPENAI_API_KEY`
 
 If unset, weekly digests and earnings summaries will be skipped gracefully with a log message. All other alerts still work.
 
@@ -234,7 +236,7 @@ If unset, weekly digests and earnings summaries will be skipped gracefully with 
 - [ ] Pushover user key set: `python manage.py set-key pushover_user YOUR_KEY`
 - [ ] Pushover API token set: `python manage.py set-key pushover_token YOUR_TOKEN`
 - [ ] Finnhub API key set: `python manage.py set-key finnhub YOUR_KEY`
-- [ ] `ANTHROPIC_API_KEY` set as Windows environment variable
+- [ ] `OPENAI_API_KEY` set as Windows environment variable
 - [ ] Test notification received on iPhone: `python manage.py test-notification`
 - [ ] Watchlist looks correct: `python manage.py list`
 - [ ] App runs without errors: `python main.py`
@@ -247,15 +249,16 @@ If unset, weekly digests and earnings summaries will be skipped gracefully with 
 - [x] `config.py` — config loader/saver
 - [x] `notifier.py` — Pushover notification wrapper
 - [x] `manage.py` — CLI watchlist manager
+- [x] `web_ui.py` — local HTTP UI for watchlist/status/test notifications
 - [x] `requirements.txt` — uses stdlib zoneinfo plus tzdata for Windows
 - [x] `sources/__init__.py`
 - [x] `sources/state.py` — unified seen-items log with 30-day auto-pruning
 - [x] `sources/time_utils.py` — timezone-aware market day helpers
 - [x] `sources/news.py` — Finnhub news polling + urgency scoring + deduplication
-- [x] `sources/earnings.py` — earnings calendar reminders + result detection + Claude summaries
+- [x] `sources/earnings.py` — earnings calendar reminders + result detection + OpenAI summaries
 - [x] `sources/insider.py` — insider trade alerts with $100k threshold
 - [x] `sources/legislation.py` — Federal Register + Grants.gov monitoring for quantum policy/funding
-- [x] `sources/summarizer.py` — Claude API summaries, graceful degradation if key missing
+- [x] `sources/summarizer.py` — OpenAI API summaries, graceful degradation if key missing
 - [x] `main.py` — master scheduler with safe error isolation, startup check on launch
 - [x] `setup_task_scheduler.ps1` — installs a Windows login scheduled task for `main.py`
 - [x] `.gitignore` — excludes `venv\`, `data\`, `config.json`, caches, and env files
@@ -264,7 +267,7 @@ If unset, weekly digests and earnings summaries will be skipped gracefully with 
 ## What Still Needs Building
 
 - [ ] Run `setup_task_scheduler.ps1` locally to install the Windows login task
-- [ ] Set `ANTHROPIC_API_KEY` as a Windows environment variable if AI summaries are desired
+- [ ] Set `OPENAI_API_KEY` as a Windows environment variable if AI summaries are desired
 - [ ] Optional: add richer legislation sources beyond Federal Register and Grants.gov
 
 ---

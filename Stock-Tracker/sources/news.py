@@ -12,6 +12,9 @@ from sources.state import has_seen_item, mark_item_seen
 from sources.time_utils import is_weekend
 
 
+MAX_SUMMARY_LENGTH = 360
+
+
 # Builds a Finnhub client using the configured API key.
 def get_client() -> finnhub.Client:
     return finnhub.Client(api_key=get_finnhub_key())
@@ -24,6 +27,20 @@ def is_urgent_news(item: dict) -> bool:
         str(item.get("summary", "")),
     ]).lower()
     return any(keyword.lower() in searchable_text for keyword in get_urgency_keywords())
+
+
+# Returns the first urgency keyword found in a news item.
+def get_matched_keyword(item: dict) -> str | None:
+    searchable_text = " ".join([
+        str(item.get("headline", "")),
+        str(item.get("summary", "")),
+    ]).lower()
+
+    for keyword in get_urgency_keywords():
+        if keyword.lower() in searchable_text:
+            return keyword
+
+    return None
 
 
 # Produces a stable ID for a news article across app restarts.
@@ -41,6 +58,50 @@ def fetch_company_news(client: finnhub.Client, ticker: str) -> list[dict]:
         return []
 
 
+# Shortens long notification fields without cutting words mid-stream.
+def shorten_text(text: str, max_length: int) -> str:
+    clean_text = " ".join(str(text or "").split())
+    if len(clean_text) <= max_length:
+        return clean_text
+
+    return clean_text[:max_length].rsplit(" ", 1)[0] + "..."
+
+
+# Converts a Finnhub timestamp into a compact display value.
+def format_published_at(timestamp) -> str:
+    if not timestamp:
+        return "unknown"
+
+    try:
+        return datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d %H:%M")
+    except (TypeError, ValueError, OSError):
+        return "unknown"
+
+
+# Builds a categorized phone-friendly news alert.
+def format_news_alert(ticker: str, item: dict) -> tuple[str, str, str | None, bool]:
+    urgent = is_urgent_news(item)
+    category = "Urgent news" if urgent else "Stock news"
+    headline = shorten_text(item.get("headline", "Stock news"), 72)
+    source = item.get("source") or ticker
+    summary = shorten_text(item.get("summary") or "New article detected.", MAX_SUMMARY_LENGTH)
+    published_at = format_published_at(item.get("datetime"))
+    matched_keyword = get_matched_keyword(item)
+
+    title = f"{category}: {ticker} - {headline}"
+    message_parts = [
+        f"Category: {category}",
+        f"Source: {source}",
+        f"Why it matters: {summary}",
+        f"Published: {published_at}",
+    ]
+
+    if matched_keyword:
+        message_parts.insert(2, f"Trigger: {matched_keyword}")
+
+    return title, "\n".join(message_parts), item.get("url"), urgent
+
+
 # Checks watched tickers for new urgent or important news.
 def check_breaking_news() -> None:
     client = get_client()
@@ -55,20 +116,7 @@ def check_breaking_news() -> None:
             if is_weekend() and not urgent:
                 continue
 
-            headline = item.get("headline", "Stock news")
-            source = item.get("source") or ticker
-            summary = item.get("summary") or "New article detected."
-            published_at = item.get("datetime")
-            if published_at:
-                try:
-                    published_at = datetime.fromtimestamp(published_at).strftime("%Y-%m-%d %H:%M")
-                    summary = f"{summary}\n\nPublished: {published_at}"
-                except (TypeError, ValueError, OSError):
-                    pass
-
-            title = f"{ticker}: {headline[:80]}"
-            message = f"{source}\n\n{summary[:700]}"
-            url = item.get("url")
+            title, message, url, urgent = format_news_alert(ticker, item)
 
             sent = send_breaking_alert(title, message, url) if urgent else send_normal_alert(title, message, url)
             if sent:

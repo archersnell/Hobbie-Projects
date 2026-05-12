@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AB Reviews</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary">
+        <div class="brand">
+          <div class="brand-mark">AB</div>
+          <div>
+            <p class="eyebrow">Invite-only taste log</p>
+            <h1>AB Reviews</h1>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <button class="nav-button active" data-view="dashboard" type="button">Dashboard</button>
+          <button class="nav-button" data-view="restaurants" type="button">Restaurants</button>
+          <button class="nav-button" data-view="add" type="button">Add Review</button>
+        </nav>
+
+      </aside>
+
+      <main class="main">
+        <section class="toolbar">
+          <div>
+            <p class="eyebrow">Brooke and Archer's Eats</p>
+            <h2 id="viewTitle">Dashboard</h2>
+          </div>
+          <button class="primary-action" id="quickAdd" type="button">Add restaurant</button>
+        </section>
+
+        <section id="dashboardView" class="view active-view">
+          <div class="hero-panel">
+            <div>
+              <p class="eyebrow">Hall of Fame</p>
+              <h3>Best bites rise to the top.</h3>
+            </div>
+            <div class="hero-stat">
+              <span id="restaurantCount">0</span>
+              <small>restaurants logged</small>
+            </div>
+          </div>
+
+          <div class="grid two-col">
+            <section class="panel">
+              <div class="panel-header">
+                <h3>Hall of Fame</h3>
+                <span>4.5 stars and up</span>
+              </div>
+              <div id="hallOfFame" class="stack"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-header">
+                <h3>Recent Updates</h3>
+                <span>Latest activity</span>
+              </div>
+              <div id="recentUpdates" class="stack"></div>
+            </section>
+          </div>
+
+          <section class="panel">
+            <div class="panel-header">
+              <h3>Best By Cuisine</h3>
+              <span>Top rated in each category</span>
+            </div>
+            <div id="bestByCuisine" class="award-grid"></div>
+          </section>
+        </section>
+
+        <section id="restaurantsView" class="view">
+          <div class="filters">
+            <input id="searchInput" placeholder="Search restaurants, dishes, notes..." />
+            <select id="cuisineFilter">
+              <option value="">All cuisines</option>
+            </select>
+            <select id="priceFilter">
+              <option value="">All prices</option>
+              <option value="$">$</option>
+              <option value="$$">$$</option>
+              <option value="$$$">$$$</option>
+              <option value="$$$$">$$$$</option>
+            </select>
+            <select id="sortSelect">
+              <option value="overall">Overall</option>
+              <option value="food">Food</option>
+              <option value="service">Service</option>
+              <option value="atmosphere">Atmosphere</option>
+              <option value="updated">Recently updated</option>
+            </select>
+          </div>
+          <div id="restaurantList" class="restaurant-grid"></div>
+        </section>
+
+        <section id="addView" class="view">
+          <form id="restaurantForm" class="form-panel">
+            <input type="hidden" id="restaurantId" />
+            <div class="form-title">
+              <div>
+                <p class="eyebrow">Restaurant record</p>
+                <h3 id="formTitle">Add Restaurant</h3>
+              </div>
+              <button class="ghost-action" id="resetForm" type="button">Clear</button>
+            </div>
+
+            <div class="form-grid">
+              <label>
+                Posting as
+                <input id="reviewerName" autocomplete="name" placeholder="Your name" />
+              </label>
+              <label>
+                Name
+                <input id="name" required placeholder="Restaurant name" />
+              </label>
+              <label>
+                Cuisine
+                <input id="cuisine" required placeholder="Sushi, BBQ, Italian..." />
+              </label>
+              <label>
+                City
+                <input id="city" placeholder="City" />
+              </label>
+              <label>
+                State
+                <input id="state" placeholder="State" />
+              </label>
+              <label>
+                Price
+                <select id="price">
+                  <option value="$">$</option>
+                  <option value="$$" selected>$$</option>
+                  <option value="$$$">$$$</option>
+                  <option value="$$$$">$$$$</option>
+                </select>
+              </label>
+              <label>
+                Google review / maps link
+                <input id="googleUrl" type="url" placeholder="https://maps.google.com/..." />
+              </label>
+            </div>
+
+            <div class="ratings-grid">
+              <div class="rating-row">
+                <span>Overall</span>
+                <input id="overall" type="range" min="0.5" max="5" step="0.5" value="4" />
+                <strong id="overallValue">4.0</strong>
+              </div>
+              <div class="rating-row">
+                <span>Food</span>
+                <input id="food" type="range" min="0.5" max="5" step="0.5" value="4" />
+                <strong id="foodValue">4.0</strong>
+              </div>
+              <div class="rating-row">
+                <span>Service</span>
+                <input id="service" type="range" min="0.5" max="5" step="0.5" value="4" />
+                <strong id="serviceValue">4.0</strong>
+              </div>
+              <div class="rating-row">
+                <span>Atmosphere</span>
+                <input id="atmosphere" type="range" min="0.5" max="5" step="0.5" value="4" />
+                <strong id="atmosphereValue">4.0</strong>
+              </div>
+            </div>
+
+            <label>
+              Ordered items
+              <textarea id="orderedItems" rows="3" placeholder="What did everyone order?"></textarea>
+            </label>
+
+            <label>
+              Notes
+              <textarea id="notes" rows="5" placeholder="What stood out? What would you post on Google?"></textarea>
+            </label>
+
+            <div class="photo-fields">
+              <label>
+                Main photo
+                <input id="mainPhoto" type="file" accept="image/*" />
+              </label>
+              <label>
+                Extra photos
+                <input id="extraPhotos" type="file" accept="image/*" multiple />
+              </label>
+            </div>
+
+            <button class="primary-action wide" type="submit">Save review</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="detailDialog">
+      <article class="detail-card">
+        <button class="close-button" id="closeDetail" aria-label="Close detail" type="button">x</button>
+        <div id="detailContent"></div>
+      </article>
+    </dialog>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
